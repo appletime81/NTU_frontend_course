@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>顯示模式</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.2/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.2/styles/github.min.css">
+    <link rel="stylesheet" href="./css/basic.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/display.css">
+</head>
+
+<body>
+    <h1>顯示模式</h1>
+    <section class="display-section">
+        <h2>區塊元素(block)</h2>
+        <div id="blockCodeExampleCodeBlock" class="example-code"></div>
+        <ul>
+            <li>預設：h1~h6,p,form,div,section,header,nav,footer...</li>
+            <li>「會」造成「換行」</li>
+            <li>「不會」設定「width」與「height」</li>
+        </ul>
+
+        <p>試著讓下方的a成為區塊元素(block)：</p>
+        <div class="display-box">div</div>
+        <!--讓a標籤強制變成block(給他一個名為d-block的分類器)，並能設定高度寬度-->
+        <a class="display-box d-block">a</a>
+    </section>
+    <section class="display-section">
+        <h2>行內文字元素(inline)</h2>
+        <div id="inlineCodeExampleCodeBlock" class="example-code"></div>
+        <ul>
+            <li>預設：a,span,label,:before,:after</li>
+            <li>「不會」造成「換行」</li>
+            <li>「不能」設定「width」與「height」</li>
+            <li>中間會有「空格」</li>
+        </ul>
+
+        <p>試著讓下方的div成為行內文字元素(inline)：</p>
+        <div class="display-box d-inline">div</div>
+        <a class="display-box">aaaaaaaaa</a>
+
+        <!-- p.price*3 -->
+        <p class="price">450</p>
+        <p class="price">350</p>
+        <p class="price">250</p>
+    </section>
+    <section class="display-section">
+        <h2>行內區塊元素(inline-block)</h2>
+        <div id="inlineBlockCodeExampleCodeBlock" class="example-code"></div>
+        <ul>
+            <li>預設：img,button,input,textarea</li>
+            <li>「不會」造成「換行」</li>
+            <li>「可以」設定「width」與「height」</li>
+            <li>中間會有「空格」</li>
+            <li>適合設計排在同行的小元素，不適合做精確的板塊切割</li>
+        </ul>
+
+        <p>試著讓下方的div,a成為行內區塊元素(inline-block)：</p>
+        <div class="display-box d-inline-block">div</div>
+        <a class="display-box d-inline-block">a</a>
+    </section>
+    <section class="display-section">
+        <h2>Flex元素(flex)</h2>
+        <h3>使用Flex排版</h3>
+        <p>試著將下方的六個.col的寬度設定為1/3並且並列排版。</p>
+        <!-- row -->
+        <div class="row">
+            <!-- col -->
+            <div class="col">
+                <h3>第1個 col</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta nisi eligendi suscipit cum dolorum
+                    vel ducimus nesciunt molestiae, nihil reprehenderit accusamus quasi, id quaerat! Odio ipsa veniam
+                    officiis reprehenderit unde!</p>
+            </div>
+            <!-- col end -->
+            <!-- col -->
+            <div class="col">
+                <h3>第2個 col</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta nisi eligendi suscipit cum dolorum
+                    vel ducimus nesciunt molestiae, nihil reprehenderit accusamus quasi, id quaerat! Odio ipsa veniam
+                    officiis reprehenderit unde!</p>
+            </div>
+            <!-- col end -->
+            <!-- col -->
+            <div class="col">
+                <h3>第3個 col</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta nisi eligendi suscipit cum dolorum
+                    vel ducimus nesciunt molestiae, nihil reprehenderit accusamus quasi, id quaerat! Odio ipsa veniam
+                    officiis reprehenderit unde!</p>
+            </div>
+            <!-- col end -->
+            <!-- col -->
+            <div class="col">
+                <h3>第4個 col</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta nisi eligendi suscipit cum dolorum
+                    vel ducimus nesciunt molestiae, nihil reprehenderit accusamus quasi, id quaerat! Odio ipsa veniam
+                    officiis reprehenderit unde!</p>
+            </div>
+            <!-- col end -->
+            <!-- col -->
+            <div class="col">
+                <h3>第5個 col</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta nisi eligendi suscipit cum dolorum
+                    vel ducimus nesciunt molestiae, nihil reprehenderit accusamus quasi, id quaerat! Odio ipsa veniam
+                    officiis reprehenderit unde!</p>
+            </div>
+            <!-- col end -->
+            <!-- col -->
+            <div class="col">
+                <h3>第6個 col</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta nisi eligendi suscipit cum dolorum
+                    vel ducimus nesciunt molestiae, nihil reprehenderit accusamus quasi, id quaerat! Odio ipsa veniam
+                    officiis reprehenderit unde!</p>
+            </div>
+            <!-- col end -->
+        </div>
+        <!-- row end -->
+        <h3>Flex對齊方式</h3>
+        <div class="flex-box">
+            <div class="item-box">
+                <span>item-box</span>
+            </div>
+            <div class="item-box">
+                <span>item-box</span>
+            </div>
+            <div class="item-box">
+                <span>item-box</span>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.2/highlight.min.js"></script>
+    <script src="./js/display.js"></script>
+    <script src="./js/code-highlight.js"></script>
+</body>
+
+</html>

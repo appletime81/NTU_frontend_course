@@ -1,0 +1,151 @@
+body {
+    /* 使用微軟正黑體, helvetica neue, arial, sans-serif   */
+    font-family: 'Microsoft JhengHei',  "helvetica neue", arial, sans-serif;
+}
+
+/*============ index 頁面 ============*/
+.g-100 {
+    filter: grayscale(100%);
+    /* 漸變: 屬姓名 秒數 速度曲線; */
+    transition: all .8s ease;
+}
+.g-100:hover {
+    filter: grayscale(0%);
+}
+
+/*============ cards 頁面 ============*/
+* {
+    /* 所有標籤都會被選到 */
+    /* 框線: 寬度 樣式 斜線 */
+    /* border: 1px solid black; */
+}
+
+/* 放置所有內容的容器 */
+.container {
+    /* 最大寬度是960px */
+    max-width: 960px;
+    /* 對外留白: 上下 左右; */
+    margin: 50px auto;
+}
+
+/* 放置所有col的容器 */
+.row {
+    /* 讓此元素內的第一層元素橫著牌 */
+    display: flex;
+    /* 不要自動縮放，如果空間不夠就換行 */
+    flex-wrap: wrap;
+}
+
+/* 一張卡片所在的容器 */
+.col {
+    width: calc(100% / 3); 
+    /* 對內留白: 上下 左右; */
+    padding: 15px 15px;
+    /* 對內留白: 上下左右; */
+    /* padding: 15px; */
+    
+}
+
+/* 一張卡片 */
+.card {
+    border-radius: 20px;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.493);
+    opacity: .9;
+    /* 把內部元素超出的區塊隱藏 */
+    overflow: hidden;
+    transition: all .5s ease;
+    transform: scale(0.97);
+}
+
+.card:hover {
+    box-shadow: 0px 20px 15px rgba(0, 0, 0, 0.493);
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* 卡片圖片 */
+.card-img {
+    width: 100%; /*占滿所在的區塊*/
+    /* border-top-right-radius: 20px; */
+    /* border-top-left-radius: 20px; */
+}
+
+/* 卡片文字區 */
+.card-body {
+    padding: 15px;
+}
+
+/* 卡片標題 */
+.card-title {
+    margin-top: 0;
+}
+
+/* 卡片內文 */
+.card-text {
+    margin-bottom: 0;
+}
+
+@keyframes flash {
+    0% { 
+        opacity: 1;
+        background: red;
+    }
+    50% {
+        opacity: .5;
+        background: green;
+    }
+    100% { 
+        opacity: 1;
+        background: red;
+    }
+}
+
+/* 卡片分類徽章 */
+.badge {
+    /* background: tomato; */
+    color: white;
+    padding: 0 4px;
+    border-radius: 2px;
+    animation-name: flash;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+
+/* RWD Responsive Web Design */
+/* CSS Media Query */
+@media (max-width: 576px) {
+    /* 以下的設定只在視窗寬度 <= 700px 有效 */
+    .col {
+        width: 100%;
+        padding: 15px 40px;
+        /* background: aqua; */
+    }
+    .card {
+        color: white;
+        background: black;
+    }
+    .card-title {
+        color: tomato;
+        text-align: center;
+    }
+
+}
+/* 平板電腦 577px ~ 900px */
+@media (min-width: 577px) and (max-width: 900px) {
+    /* 以下的設定只在視窗寬度 <= 700px 有效 */
+    .col {
+        width: 50%;
+        /* padding: 15px 40px; */
+        /* background: aqua; */
+    }
+    /* .card {
+        color: white;
+        background: black;
+    } */
+    /* .card-title {
+        color: tomato;
+        text-align: center;
+    } */
+
+}
