@@ -3,6 +3,10 @@
 =                  POSITION                   =
 =============================================*/
 .navbar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1000; /* 設定較大的數字，確保在捲動時元素不覆蓋navbar */
     display: flex;
     /* 一個靠左一個靠右 */
     justify-content: space-between;
@@ -98,20 +102,23 @@
 }
 
 .relative-btn {
-    border: none;
+    border: none; /* button預設有bottom border */
     height: 40px;
     color: white;
     padding: 0 20px;
     background: #30c39e;
-    cursor: pointer;
+    cursor: pointer; /* 鼠標變為手指 */
     border-radius: 6px;
     box-shadow: 0px 2px 3px rgba(0, 0, 0, .2);
-    /* transition: all .3s ease; */
+    transition: all .3s ease;
+    position: relative;
+    bottom: 0px; /* top為由上往下推, left由左往又推 */   /* 預設為 position: static; */
 }
 
 .relative-btn:hover {
     background: #0085ad;
     box-shadow: 0px 15px 15px rgba(0, 0, 0, .2);
+    bottom: 5px;
 }
 
 .outer-box {
@@ -121,6 +128,7 @@
     background: #003666;
     border: 1px solid black;
     border-radius: 5px;
+    position: relative;
 }
 
 .inner-box {
@@ -131,12 +139,32 @@
     opacity: .8;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, .5);
     /* 設定此元素定位到上層元素(.outer-box)的指定位置 */
-
+    position: absolute; /* 設定為absoslute"不會佔據空間" (顯示方式，飄起來，底下的標籤直接佔據它原先的位置)*/
+    right: 20px;
+    /* top: 0; */
+    bottom: 20px;
+    z-index: 2; /* 比大小 數值小在後面 數值大在前面*/
 }
 
 .inner-box:hover {
     opacity: 1;
 }
+
+
+.center-box {
+    width: 120px;
+    height: 120px;
+    background-color: gray;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    /* margin: 0 auto; */  /* 置中的其中一種方式 */
+    z-index: 1;
+}
+
 
 .card {
     width: 300px;
@@ -168,11 +196,42 @@
     margin-bottom: 3px;
 }
 
-.card-header {}
+.card-header {
+    position: relative;
+    overflow: hidden;
+}
 
-.card-btns {}
+.card-btns {
+    position: absolute;
+    right: -200px;
+    bottom: 15px;
+    transition: all .5s cubic-bezier(.01,1.61,.85,-1.75);
+}
+
+.card:hover .card-btns { /* 用階層選取元素 */
+    /* 改變放在card裡面的元素，賦予特效 (對應 line: 199-203) */
+    right: 15px;
+}
 
 .card-btns button {
     color: tomato;
     font-size: 22px;
+    background: transparent;
+    border: none;
+    opacity: .7;
+    transition: all .5s ease;
+    position: relative;
+    bottom: 0; /* auto 不支援漸變 */
 }
+
+.card-btns button:hover {
+    opacity: 1;
+    bottom: 5px;
+}
+
+/*
+relative: ex. 自己本身的位置由下往上移
+absolute: 把下層元素丟上 上層元素中
+
+*/
+

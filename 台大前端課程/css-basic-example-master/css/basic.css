@@ -1,5 +1,8 @@
 /* 設定所有元素計算大小的方式以元素的邊框基準 */
 * {
+    /* 計算大小標準包含border */
+    /* box-sizing: border-box; */
+    /* 預設 content-box(不推薦使用) */
     box-sizing: border-box;
 }
 
