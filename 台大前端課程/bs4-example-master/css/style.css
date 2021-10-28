@@ -30,6 +30,13 @@ button:focus {
 #header {
     border-radius: 0px;
     margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background-image: url("../img/header-image.jpg");
+    background-size: cover;
+    background-attachment: fixed; /* 固定背景，跟著捲動一起動 */
+
     /* TODO: 加入背景圖片 */
     /* background-image: url(""); */
 }
@@ -91,6 +98,10 @@ button:focus {
 
 .gallery-block,
 .gallery-text {
+    color: white;
+    font-weight: 700;
+    text-shadow: 0 8px 10px rgba(0, 0, 0, .5);
+    text-align: center;
     transition: all .5s ease-out;
 }
 
@@ -102,6 +113,11 @@ button:focus {
     justify-content: center;
     filter: grayscale(100%);
 }
+
+.gallery-block:hover {
+    transform: scale(1.2) rotate(-180deg);
+}
+
 
 .gallery-text {
     color: white;
