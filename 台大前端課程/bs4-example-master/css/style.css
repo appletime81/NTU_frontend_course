@@ -98,10 +98,6 @@ button:focus {
 
 .gallery-block,
 .gallery-text {
-    color: white;
-    font-weight: 700;
-    text-shadow: 0 8px 10px rgba(0, 0, 0, .5);
-    text-align: center;
     transition: all .5s ease-out;
 }
 
@@ -114,16 +110,14 @@ button:focus {
     filter: grayscale(100%);
 }
 
-.gallery-block:hover {
-    transform: scale(1.2) rotate(-180deg);
-}
-
-
 .gallery-text {
     color: white;
     font-weight: 700;
     text-shadow: 0 8px 10px rgba(0, 0, 0, .5);
     text-align: center;
+    /* font-size: 3px; */
+    transform: scale(.2) rotate(-180deg);
+    opacity: 0;
 }
 
 .gallery-block:hover {
@@ -131,7 +125,8 @@ button:focus {
 }
 
 .gallery-block:hover .gallery-text {
-    
+    transform: scale(1.2);
+    opacity: 1;
 }
 
 /* 放入背景圖片 */
